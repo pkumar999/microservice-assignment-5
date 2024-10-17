@@ -46,6 +46,7 @@ public class WorkOrderService {
      * @param workOrder - WorkOrder entity model class.
      * @return - returns saved WorkOrder entity model class
      */
+    //TODO: Convert passed WorkOrderDTO to WorkOrder entity model class and once it's saved into the database then convert back to DTO and return back
     @Transactional(rollbackOn = Exception.class)
     public WorkOrder add(WorkOrder workOrder) {
         try {
@@ -67,7 +68,8 @@ public class WorkOrderService {
      * @param workOrder - payload that contains updated WorkOrder
      * @return - Updated WorkOrder
      */
-    //TODO: Convert WorkOrder entity model class to WorkOrderDTO and return back
+    
+    //TODO: Convert passed WorkOrderDTO to WorkOrder entity model class and once it's updated into the database then convert back to DTO and return back
     @Transactional(rollbackOn = Exception.class)
     public WorkOrder update(Integer workOrderNumber, WorkOrder workOrder) {
         Optional<WorkOrder> workOrderResp = workOrderRepository.findById(workOrderNumber);
